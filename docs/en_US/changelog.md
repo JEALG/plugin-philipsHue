@@ -6,13 +6,73 @@
 >
 >As a reminder if there is no information on the update, it means that it only concerns the updating of documentation, translation or text
 
+# 09/22/2024
+
+- Fixed warning when starting the daemon
+- Fixed an issue with nodejs 20
+- Warning correction
+
+# 08/13/2024
+
+- Fixed bug on daemon state detection
+- Improved sensor enable/disable controls
+- Management of modules with multiple times the same service (such as modules with dual relay outputs)
+- Daemon Optimization
+
+# 02/28/2024
+
+- Better handling of cases where two scenes have the same name
+- Added missing image for modules
+
+# 02/10/2024
+
+- Bugfix
+
+# 02/07/2024
+
+- Fixed a bug that changed the configuration of controls for rooms, lamp groups and zones during synchronization
+
+# 01/25/2024
+
+- Improved transition management
+
+# 01/24/2024
+
+- Fixed a bug which in certain cases could cause duplicate events to occur.
+
+# 01/19/2024
+
+- Workaround to correct the brightness bug when switching on Hue apiv2
+
+# 01/17/2024
+
+- Resumption of the previous brightness during an on
+- Added transitions to grouped zones, rooms and lights
+- Complete overhaul of order creation : no need to have a configuration so that your lamp has the right controls, everything comes from the bridge
+- Added alert command
+- Important : for those who have sockets it is possible that you have a synchronization error, you must therefore delete the status command on the sockets and restart the synchronization
+
+# 01/16/2024
+
+- Added HUE product illustrations (LTV001, LTA011, LTA009, 5047431P6, 929003479601)
+
+# 01/15/2024
+
+- Improved transition management
+- LTC002 (Hue Ambiance Ceiling)
+
+# 01/10/2024
+
+- Support for scenes on zones
+
+# 01/08/2024
 
 - Complete rewrite of the plugin to use the hue 2.0 api
 - Requires resynchronization to walk
 - WARNING : For the sensors the commands change completely so you have to review your scenarios
 - Important : certain commands will no longer be available with this new version, including alerts, the rainbow and animations
 - Important : Scenes are now of type action other, so there is a command not scene
-- VERY IMPORTANT : once in beta you must not return to stable or go through a backup restoration
+- VERY IMPORTANT : Only the v2 bridge is compatible, if you are on the v1 bridge then you should definitely not update because Philips Hue has not ported the v2 API to the v1 bridge.
 
 
 # 04/10/2021

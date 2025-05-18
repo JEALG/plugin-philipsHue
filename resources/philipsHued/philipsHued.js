@@ -42,6 +42,10 @@ for (i in bridges) {
 }
 
 function launchConnection(_bridge_id,_retry){
+  if(!bridges[_bridge_id]['lastEvent']){
+      bridges[_bridge_id]['lastEvent'] = '';
+  }
+  bridges[_bridge_id]['lastMessage'] = Math.floor(new Date().getTime() / 1000)
   if(_retry > 10){
     Jeedom.log.error('[launchConnection] Too much retry, I will kill me...')
     process.exit()
@@ -68,7 +72,17 @@ function launchConnection(_bridge_id,_retry){
     if(_retry != 0){
       _retry = 0;
     }
+    let data = JSON.parse(e.data);
+    if(data[0].id && data[0].id == bridges[_bridge_id]['lastEvent']){
+        return;
+    }
     bridges[_bridge_id]['lastMessage'] = Math.floor(new Date().getTime() / 1000)
+    if(data[0].id){
+    	bridges[_bridge_id]['lastEvent'] = data[0].id;
+    }
+    if(data.length == 1 && data[0]['data'] && data[0]['data'].length == 1 && data[0]['data'][0]['type'] == 'geofence_client' && data[0]['data'][0]['name'].indexOf('jeedom') === 0){
+      return;
+    }
     Jeedom.com.add_changes('bridge::'+_bridge_id,e.data);
   })
 
@@ -81,17 +95,7 @@ function launchConnection(_bridge_id,_retry){
       return
     }
     Jeedom.log.error('[launchConnection] Lost connection to SSE server. Try reconnect...')
-    bridges[_bridge_id]['es'] = new EventSource('https://'+bridges[_bridge_id]['ip']+'/eventstream/clip/v2',{
-      headers:{
-        'hue-application-key': bridges[_bridge_id]['key'],
-        'Connection':'keep-alive',
-        'Accept':'text/event-stream',
-        'Cache-Control':'no-cache'
-      },
-      https: {
-        rejectUnauthorized: false
-      }
-    });
+    launchConnection(_bridge_id,(_retry+1))
     Jeedom.com.add_changes('bridge::'+_bridge_id,'resync');
   },30000);
 }
@@ -165,7 +169,7 @@ function createJeedomGeoloc(_bridge_id){
   });
   req.write(JSON.stringify({
     'type' : 'geofence_client',
-    'is_at_home' : true,
+    'is_at_home' : false,
     'name' : 'jeedom'
   }));
   req.end();

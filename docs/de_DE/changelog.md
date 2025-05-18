@@ -6,13 +6,73 @@
 >
 >Zur Erinnerung: Wenn keine Informationen zum Update vorhanden sind, bedeutet dies, dass es sich nur um die Aktualisierung von Dokumentation, Übersetzung oder Text handelt
 
+# 22.09.2024
+
+- Eine Warnung beim Starten des Daemons wurde behoben
+- Ein Problem mit NodeJS 20 wurde behoben
+- Warnung beheben
+
+# 13.08.2024
+
+- Ein Fehler bei der Daemon-Statuserkennung wurde behoben
+- Verbesserte Steuerung zum Aktivieren/Deaktivieren von Sensoren
+- Verwaltung von Modulen mit dem gleichen Dienst mehrmals (z. B. Module mit doppelten Relaisausgängen))
+- Daemon-Optimierung
+
+# 28.02.2024
+
+- Bessere Handhabung von Fällen, in denen zwei Szenen denselben Namen haben
+- Fehlendes Bild für Module hinzugefügt
+
+# 10.02.2024
+
+- Fehlerbehebungen
+
+# 02.07.2024
+
+- Es wurde ein Fehler behoben, der die Konfiguration der Steuerungen für Räume, Lampengruppen und Zonen während der Synchronisierung änderte
+
+# 25.01.2024
+
+- Verbessertes Übergangsmanagement
+
+# 24.01.2024
+
+- Es wurde ein Fehler behoben, der in bestimmten Fällen dazu führen konnte, dass doppelte Ereignisse auftraten.
+
+# 19.01.2024
+
+- Problemumgehung zur Behebung des Helligkeitsfehlers beim Einschalten von Hue apiv2
+
+# 17.01.2024
+
+- Wiederaufnahme der vorherigen Helligkeit während eines Einschaltvorgangs
+- Übergänge zu gruppierten Zonen, Räumen und Lichtern hinzugefügt
+- Komplette Überarbeitung der Auftragserstellung : Es ist keine Konfiguration erforderlich, damit Ihre Lampe über die richtigen Bedienelemente verfügt. Alles kommt von der Brücke
+- Alarmbefehl hinzugefügt
+- Wichtig : Für diejenigen, die über Sockets verfügen, liegt möglicherweise ein Synchronisierungsfehler vor. Sie müssen daher den Statusbefehl auf den Sockets löschen und die Synchronisierung neu starten
+
+# 16.01.2024
+
+- HUE-Produktabbildungen hinzugefügt (LTV001, LTA011, LTA009, 5047431P6, 929003479601))
+
+# 15.01.2024
+
+- Verbessertes Übergangsmanagement
+- LTC002 (Hue Ambiance Decke))
+
+# 10.01.2024
+
+- Unterstützung für Szenen in Zonen
+
+# 01.08.2024
 
 - Komplette Neufassung des Plugins zur Verwendung der hue 2.0 API
 - Zum Gehen ist eine Neusynchronisation erforderlich
 - WARNUNG : Für die Sensoren ändern sich die Befehle vollständig, sodass Sie Ihre Szenarien überprüfen müssen
 - Wichtig : Einige Befehle sind mit dieser neuen Version nicht mehr verfügbar, darunter Warnungen, Regenbogen und Animationen
 - Wichtig : Szenen sind jetzt vom Typ Aktion andere, also gibt es einen Befehl nicht Szene
-- SEHR WICHTIG : Sobald Sie sich in der Beta befinden, dürfen Sie nicht zu Stable zurückkehren oder eine Backup-Wiederherstellung durchführen
+- SEHR WICHTIG : Nur die v2-Bridge ist kompatibel. Wenn Sie sich auf der v1-Bridge befinden, sollten Sie auf keinen Fall aktualisieren, da Philips Hue die v2-API nicht auf die v1-Bridge portiert hat.
 
 
 # 10.04.2021

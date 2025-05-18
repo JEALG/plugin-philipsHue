@@ -6,13 +6,73 @@
 >
 >Como lembrete, se não houver informações sobre a atualização, isso significa que se trata apenas da atualização da documentação, tradução ou texto
 
+# 22/09/2024
+
+- Corrigido um aviso ao iniciar o daemon
+- Corrigido um problema com o nodejs 20
+- Corrigir aviso
+
+# 13/08/2024
+
+- Corrigido um bug na detecção do estado do daemon
+- Controles aprimorados de ativação/desativação do sensor
+- Gerenciamento de módulos com o mesmo serviço diversas vezes (como módulos com saídas duplas de relé)
+- Otimização do Daemon
+
+# 28/02/2024
+
+- Melhor tratamento de casos onde duas cenas possuem o mesmo nome
+- Adicionada imagem ausente para módulos
+
+# 10/02/2024
+
+- Correções de bugs
+
+# 07/02/2024
+
+- Corrigido um bug que alterava a configuração dos controles de salas, grupos de lâmpadas e zonas durante a sincronização
+
+# 25/01/2024
+
+- Gerenciamento de transição aprimorado
+
+# 24/01/2024
+
+- Corrigido um bug que em certos casos poderia causar a ocorrência de eventos duplicados.
+
+# 19/01/2024
+
+- Solução alternativa para corrigir o bug de brilho ao ativar o Hue apiv2
+
+# 17/01/2024
+
+- Retomada do brilho anterior durante uma ligação
+- Adicionadas transições para zonas, salas e luzes agrupadas
+- Revisão completa da criação de pedidos : não precisa ter configuração para que sua lâmpada tenha os controles corretos, tudo vem da ponte
+- Adicionado comando de alerta
+- IMPORTANTE : para quem tem sockets é possível que tenha algum erro de sincronização, portanto deve deletar o comando status nos sockets e reiniciar a sincronização
+
+# 16/01/2024
+
+- Adicionadas ilustrações de produtos HUE (LTV001, LTA011, LTA009, 5047431P6, 929003479601)
+
+# 15/01/2024
+
+- Gerenciamento de transição aprimorado
+- LTC002 (teto ambiente matiz)
+
+# 10/01/2024
+
+- Suporte para cenas em zonas
+
+# 01/08/2024
 
 - Reescrita completa do plugin para usar a API Hue 2.0
 - Requer ressincronização para andar
 - AVISO : Para os sensores, os comandos mudam completamente, então você precisa revisar seus cenários
 - IMPORTANTE : certos comandos não estarão mais disponíveis com esta nova versão, incluindo alertas, arco-íris e animações
 - IMPORTANTE : As cenas agora são do tipo ação outro, então há um comando não cena
-- MUITO IMPORTANTE : uma vez na versão beta, você não deve retornar ao estável ou passar por uma restauração de backup
+- MUITO IMPORTANTE : Somente a ponte v2 é compatível, se você estiver na ponte v1, definitivamente não deve atualizar porque o Philips Hue não portou a API v2 para a ponte v1.
 
 
 # 10/04/2021

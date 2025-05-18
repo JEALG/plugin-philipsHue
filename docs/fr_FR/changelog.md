@@ -6,13 +6,73 @@
 >
 >Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte
 
+# 22/09/2024
+
+- Correction d'un warning sur lors du démarrage du demon
+- Correction d'un soucis avec nodejs 20
+- Correction de warning
+
+# 13/08/2024
+
+- Correction d'un bug sur la detection de l'état du démon
+- Amélioration des commandes d'activation/desactivation des capteurs
+- Gestion des modules avec plusieurs fois le meme service (comme les modules à double sorties relais)
+- Optimisation du démon
+
+# 28/02/2024
+
+- Meilleure gestion des cas ou deux scénes ont le meme nom
+- Ajout d'image manquante pour les modules
+
+# 10/02/2024
+
+- Correction de bugs
+
+# 07/02/2024
+
+- Correction d'un bug qui changait la configuration des commandes pour les pieces, groupe de lampe et zone lors de la synchronisation
+
+# 25/01/2024
+
+- Amélioration de la gestion des transition
+
+# 24/01/2024
+
+- Correction d'un bug qui dans certain cas pouvait faire arriver les évènements en double.
+
+# 19/01/2024
+
+- Workarround pour corrigé le bug de la luminosité lors d'un on de l'apiv2 de Hue
+
+# 17/01/2024
+
+- Reprise de la luminosité précedente lors d'un on
+- Ajout des transistions sur les zones, pieces et lumieres groupées
+- Refonte complete de la créations des commandes : plus besoin d'avoir une configuration pour que votre lampe ait les bonnes commandes, tout vient du pont
+- Ajout de la commande alerte
+- IMPORTANT : pour ceux qui ont des prises il est possible que vous ayez une erreur a la synchronisation, il faut donc sur les prises supprimer la commande état et relancer la synchronisation
+
+# 16/01/2024
+
+- Ajout d'illustrations produits HUE (LTV001, LTA011, LTA009, 5047431P6, 929003479601)
+
+# 15/01/2024
+
+- Amélioration de la gestion des transitions
+- LTC002 (Hue Ambiance Ceiling)
+
+# 10/01/2024
+
+- Support des scénes sur les zones
+
+# 08/01/2024
 
 - Réécriture complete du plugin pour utiliser l'api hue 2.0
 - Necessite une resynchronisation pour marcher
 - ATTENTION : Pour les capteurs les commandes changent completement il faut donc revoir vos scénarios
 - IMPORTANT : certaine commandes ne seront plus disponible avec cette nouvelle version dont les alertes, l'arc en ciel et les animation
 - IMPORTANT : Les scenes sont maintenant de type action other, il y a donc une commande pas scene
-- TRES IMPORTANT : une fois passé en beta il ne faut pas revenir en stable ou alors passer par une restoration de backup
+- TRES IMPORTANT : Seul le pont v2 est compatible, si vous etes sur le pont v1 alors il ne faut surtout pas mettre à jour car Philips Hue n'a pas porté l'api v2 sur le pont v1.
 
 
 # 04/10/2021

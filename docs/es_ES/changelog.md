@@ -6,13 +6,73 @@
 >
 >Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto
 
+# 22/09/2024
+
+- Se corrigió una advertencia al iniciar el demonio
+- Se solucionó un problema con nodejs 20
+- Arreglar advertencia
+
+# 13/08/2024
+
+- Se corrigió un error en la detección del estado del demonio
+- Controles de activación/desactivación de sensores mejorados
+- Gestión de módulos con el mismo servicio varias veces (como módulos con doble salida de relé))
+- Optimización del demonio
+
+# 28/02/2024
+
+- Mejor manejo de casos en los que dos escenas tienen el mismo nombre
+- Se agregó una imagen faltante para los módulos
+
+# 10/02/2024
+
+- Correcciones de errores
+
+# 07/02/2024
+
+- Se corrigió un error que cambiaba la configuración de controles para habitaciones, grupos de lámparas y zonas durante la sincronización
+
+# 25/01/2024
+
+- Gestión de transición mejorada
+
+# 24/01/2024
+
+- Se corrigió un error que en ciertos casos podía causar que ocurrieran eventos duplicados.
+
+# 19/01/2024
+
+- Solución alternativa para corregir el error de brillo al activar Hue apiv2
+
+# 17/01/2024
+
+- Reanudación del brillo anterior durante un encendido
+- Se agregaron transiciones a zonas, habitaciones y luces agrupadas
+- Revisión completa de la creación de pedidos : no es necesario tener una configuración para que tu lámpara tenga los controles correctos, todo viene del puente
+- Comando de alerta agregado
+- Importante : para aquellos que tienen sockets es posible que tengan un error de sincronización, por lo tanto deben eliminar el comando de estado en los sockets y reiniciar la sincronización
+
+# 16/01/2024
+
+- Se agregaron ilustraciones de productos HUE (LTV001, LTA011, LTA009, 5047431P6, 929003479601))
+
+# 15/01/2024
+
+- Gestión de transición mejorada
+- LTC002 (techo de ambiente Hue)
+
+# 01/10/2024
+
+- Soporte para escenas en zonas
+
+# 08/01/2024
 
 - Reescritura completa del complemento para usar la api hue 2.0
 - Requiere resincronización para caminar
 - ATENCIÓN : Para los sensores, los comandos cambian por completo, por lo que debe revisar sus escenarios
 - Importante : algunos comandos ya no estarán disponibles con esta nueva versión, incluidas las alertas, el arcoíris y las animaciones
 - Importante : Las escenas ahora son de tipo action other, por lo que hay un comando, no una escena
-- MUY IMPORTANTE : una vez en beta, no debe volver a estable ni pasar por una restauración de copia de seguridad
+- MUY IMPORTANTE : Solo el puente v2 es compatible; si está en el puente v1, definitivamente no debería actualizar porque Philips Hue no ha portado la API v2 al puente v1.
 
 
 # 10/04/2021
